@@ -24,20 +24,20 @@ struct CreateCrewView: View {
                     TextField("Ship Name", text: $shipName)
                         .disableAutocorrection(true)
                 }
-                
-            }
-            
-            
-            Button {
-                crewVM.createCrew(name: crewName, shipName: shipName)
-                presentationMode.wrappedValue.dismiss()
-            } label: {
-                Text("Create Crew")
-                    .padding()
-                    .foregroundColor(.white)
-                    .background(Color.blue)
-                    .cornerRadius(15)
-                    .padding(.vertical, 25)
+                Section(footer: Button {
+                    crewVM.createCrew(name: crewName, shipName: shipName)
+                    presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Create Crew")
+                        .font(.body)
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(15)
+                        .frame(maxWidth: .infinity)
+                }){
+                    EmptyView()
+                }
             }
         }
         .navigationTitle("Create a New Crew")
