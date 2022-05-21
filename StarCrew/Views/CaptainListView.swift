@@ -23,9 +23,7 @@ struct CaptainListView: View {
                 + Text("\(captain.level)")
             }
             HStack {
-                Text("Background: ")
-                    .bold()
-                + Text("\(captain.background ?? "Unknown")")
+                Text("\(captain.background ?? "Unknown")")
                 Spacer()
                 Text("Current Health: ")
                     .bold()
@@ -73,6 +71,7 @@ struct CaptainListView: View {
                 VStack {
                     HStack {
                         Text("\(power.name ?? "Unknown")")
+                            .bold()
                         Spacer()
                         Text("Activation: ")
                             .bold()
@@ -85,11 +84,30 @@ struct CaptainListView: View {
                             .bold()
                         + Text("\(power.strain)")
                     }
-                    Text("\(power.notes ?? "Notes")")
-                        .frame(maxWidth: .infinity)
-                        .multilineTextAlignment(.leading)
+                    VStack {
+                        Text("Description: ")
+                            .bold()
+                        + Text("\(power.notes ?? "Notes")")
+                            
+                    }.frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
+            .padding(.horizontal)
+            
+            HStack {
+                Text("Gear")
+                    .bold()
+                Spacer()
+            }
+            Text("\(captain.gear ?? "Gear")")
+                .frame(maxWidth: .infinity, alignment: .leading)
+            HStack {
+                Text("Notes")
+                    .bold()
+                Spacer()
+            }
+            Text("\(captain.notes ?? "Gear")")
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding()
     }
@@ -112,6 +130,8 @@ struct CaptainListView_Previews: PreviewProvider {
         sampleCaptain.will = 9
         sampleCaptain.health = 14
         sampleCaptain.currentHealth = 10
+        sampleCaptain.gear = "Pistol, medkit"
+        sampleCaptain.notes = "Lost an ear"
         samplePower.name = "Hip shot"
         samplePower.activation = 12
         samplePower.strain = 2

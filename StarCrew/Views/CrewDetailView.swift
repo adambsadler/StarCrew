@@ -50,7 +50,7 @@ struct CrewDetailView: View {
                     
                     if crew.captain == nil {
                         Button {
-                            
+                            // Go to CreateCaptainView
                         } label: {
                             Text("Add Captain")
                                 .bold()

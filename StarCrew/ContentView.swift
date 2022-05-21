@@ -29,24 +29,25 @@ struct ContentView: View {
                 .onDelete(perform: deleteCrew)
             }
             .navigationTitle("Your Crews")
+            .navigationViewStyle(.stack)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
                 ToolbarItem {
-                    Button(action: addCrew) {
-                        Label("Add Crew", systemImage: "plus")
+                    NavigationLink {
+                        CreateCrewView(crewVM: CrewViewModel())
+                    } label: {
+                        Text("Create a Crew")
                     }
+
                 }
             }
-            Text("Select an crew")
         }
+        
     }
 
     private func addCrew() {
         withAnimation {
             let newCrew = Crew(context: viewContext)
-            newCrew.name = "New Test Crew"
+            newCrew.name = "New Crew"
 
             do {
                 try viewContext.save()
