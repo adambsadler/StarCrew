@@ -12,40 +12,41 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Crew.name, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    private var crews: FetchedResults<Crew>
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(items) { item in
+                ForEach(crews) { crew in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        CrewDetailView(crew: crew)
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        Text(crew.name!)
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .onDelete(perform: deleteCrew)
             }
+            .navigationTitle("Your Crews")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()
                 }
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: addCrew) {
+                        Label("Add Crew", systemImage: "plus")
                     }
                 }
             }
-            Text("Select an item")
+            Text("Select an crew")
         }
     }
 
-    private func addItem() {
+    private func addCrew() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newCrew = Crew(context: viewContext)
+            newCrew.name = "New Test Crew"
 
             do {
                 try viewContext.save()
@@ -58,9 +59,9 @@ struct ContentView: View {
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteCrew(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { crews[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -73,13 +74,6 @@ struct ContentView: View {
         }
     }
 }
-
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

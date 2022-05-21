@@ -14,6 +14,8 @@
 		F91B37312839195800175019 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B37302839195800175019 /* Persistence.swift */; };
 		F91B37342839195900175019 /* StarCrew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F91B37322839195900175019 /* StarCrew.xcdatamodeld */; };
 		F91B373D28391A4400175019 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91B373C28391A4400175019 /* CloudKit.framework */; };
+		F91B374028392A1600175019 /* CrewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B373F28392A1600175019 /* CrewDetailView.swift */; };
+		F91B374528393F8700175019 /* CaptainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B374428393F8700175019 /* CaptainListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		F91B373A28391A4100175019 /* StarCrew.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StarCrew.entitlements; sourceTree = "<group>"; };
 		F91B373C28391A4400175019 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		F91B373E28391A6D00175019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F91B373F28392A1600175019 /* CrewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewDetailView.swift; sourceTree = "<group>"; };
+		F91B374428393F8700175019 /* CaptainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptainListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,7 @@
 				F91B37302839195800175019 /* Persistence.swift */,
 				F91B37322839195900175019 /* StarCrew.xcdatamodeld */,
 				F91B372D2839195800175019 /* Preview Content */,
+				F91B374128393B2E00175019 /* Views */,
 			);
 			path = StarCrew;
 			sourceTree = "<group>";
@@ -87,6 +92,15 @@
 				F91B373C28391A4400175019 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F91B374128393B2E00175019 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F91B373F28392A1600175019 /* CrewDetailView.swift */,
+				F91B374428393F8700175019 /* CaptainListView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +176,8 @@
 				F91B37342839195900175019 /* StarCrew.xcdatamodeld in Sources */,
 				F91B37312839195800175019 /* Persistence.swift in Sources */,
 				F91B372A2839195800175019 /* ContentView.swift in Sources */,
+				F91B374528393F8700175019 /* CaptainListView.swift in Sources */,
+				F91B374028392A1600175019 /* CrewDetailView.swift in Sources */,
 				F91B37282839195800175019 /* StarCrewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
