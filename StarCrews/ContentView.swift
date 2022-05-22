@@ -28,8 +28,8 @@ struct ContentView: View {
                 }
                 .onDelete(perform: deleteCrew)
             }
+            
             .navigationTitle("Your Crews")
-            .navigationViewStyle(.stack)
             .toolbar {
                 ToolbarItem {
                     NavigationLink {
@@ -40,7 +40,7 @@ struct ContentView: View {
 
                 }
             }
-        }
+        }.navigationViewStyle(.stack)
         
     }
 
