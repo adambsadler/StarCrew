@@ -24,6 +24,7 @@
 		F91B37522839B8F400175019 /* CreateSoldierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B37512839B8F400175019 /* CreateSoldierView.swift */; };
 		F91B37542839BA9400175019 /* SoldierListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B37532839BA9400175019 /* SoldierListView.swift */; };
 		F91B3756283A6EEC00175019 /* EditCrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3755283A6EEC00175019 /* EditCrewView.swift */; };
+		F91B3758283A862100175019 /* EditCaptainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3757283A862100175019 /* EditCaptainView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		F91B37512839B8F400175019 /* CreateSoldierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSoldierView.swift; sourceTree = "<group>"; };
 		F91B37532839BA9400175019 /* SoldierListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierListView.swift; sourceTree = "<group>"; };
 		F91B3755283A6EEC00175019 /* EditCrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCrewView.swift; sourceTree = "<group>"; };
+		F91B3757283A862100175019 /* EditCaptainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCaptainView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				F91B37512839B8F400175019 /* CreateSoldierView.swift */,
 				F91B37532839BA9400175019 /* SoldierListView.swift */,
 				F91B3755283A6EEC00175019 /* EditCrewView.swift */,
+				F91B3757283A862100175019 /* EditCaptainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				F91B374E28398C5700175019 /* FirstMateListView.swift in Sources */,
 				F91B374728396EC400175019 /* CreateCrewView.swift in Sources */,
 				F91B37282839195800175019 /* StarCrewApp.swift in Sources */,
+				F91B3758283A862100175019 /* EditCaptainView.swift in Sources */,
 				F91B374C2839839A00175019 /* CreateCaptainView.swift in Sources */,
 				F91B3756283A6EEC00175019 /* EditCrewView.swift in Sources */,
 			);

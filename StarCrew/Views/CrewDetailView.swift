@@ -86,6 +86,20 @@ struct CrewDetailView: View {
 
                     } else {
                         CaptainListView(captain: crew.captain!)
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                EditCaptainView(crewVM: CrewViewModel(), captain: crew.captain!)
+                            } label: {
+                                Text("Update Captain")
+                                    .bold()
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            Spacer()
+                        }
                     }
                     Divider()
                     
@@ -130,7 +144,9 @@ struct CrewDetailView: View {
         .padding()
         .navigationTitle("\(crew.name!)")
         .onAppear {
-            soldierArray = crewVM.createSoldierArray(crew: crew)
+            DispatchQueue.main.async {
+                soldierArray = crewVM.getSoldierArray(crew: crew)
+            }
         }
     }
 }

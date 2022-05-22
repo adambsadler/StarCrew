@@ -44,20 +44,6 @@ struct ContentView: View {
         
     }
 
-    private func addCrew() {
-        withAnimation {
-            let newCrew = Crew(context: viewContext)
-            newCrew.name = "New Crew"
-
-            do {
-                try viewContext.save()
-            } catch {
-                let nsError = error as NSError
-                print("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
     private func deleteCrew(offsets: IndexSet) {
         withAnimation {
             offsets.map { crews[$0] }.forEach(viewContext.delete)

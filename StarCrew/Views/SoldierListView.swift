@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SoldierListView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    var soldier: Soldier
+    @ObservedObject var soldier: Soldier
     
     var body: some View {
         VStack (spacing: 10) {
@@ -35,12 +35,12 @@ struct SoldierListView: View {
                 VStack {
                     Text("Fight")
                         .bold()
-                    Text("\(soldier.fight)")
+                    Text("+\(soldier.fight)")
                 }
                 VStack {
                     Text("Shoot")
                         .bold()
-                    Text("\(soldier.shoot)")
+                    Text("+\(soldier.shoot)")
                 }
                 VStack {
                     Text("Armour")
@@ -50,7 +50,7 @@ struct SoldierListView: View {
                 VStack {
                     Text("Will")
                         .bold()
-                    Text("\(soldier.will)")
+                    Text("+\(soldier.will)")
                 }
                 VStack {
                     Text("Health")

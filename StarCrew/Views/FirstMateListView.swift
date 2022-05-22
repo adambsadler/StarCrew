@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FirstMateListView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    var firstMate: FirstMate
+    @ObservedObject var firstMate: FirstMate
     
     var body: some View {
         VStack (spacing: 10) {
@@ -38,12 +38,12 @@ struct FirstMateListView: View {
                 VStack {
                     Text("Fight")
                         .bold()
-                    Text("\(firstMate.fight)")
+                    Text("+\(firstMate.fight)")
                 }
                 VStack {
                     Text("Shoot")
                         .bold()
-                    Text("\(firstMate.shoot)")
+                    Text("+\(firstMate.shoot)")
                 }
                 VStack {
                     Text("Armour")
@@ -53,7 +53,7 @@ struct FirstMateListView: View {
                 VStack {
                     Text("Will")
                         .bold()
-                    Text("\(firstMate.will)")
+                    Text("+\(firstMate.will)")
                 }
                 VStack {
                     Text("Health")

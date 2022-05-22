@@ -47,6 +47,17 @@ class CrewViewModel: ObservableObject {
         }
     }
     
+    func deleteCaptain(captain: Captain) {
+        context.delete(captain)
+        
+        do {
+            try context.save()
+        } catch {
+            let error = error as NSError
+            print("Error deleting captain: \(error)")
+        }
+    }
+    
     func createFirstMate(crew: Crew, firstMateName: String, firstMateBackground: String) {
         let newFirstMate = FirstMate(context: context)
         newFirstMate.name = firstMateName
@@ -77,7 +88,7 @@ class CrewViewModel: ObservableObject {
         }
     }
     
-    func createSoldierArray(crew: Crew) -> [Soldier] {
+    func getSoldierArray(crew: Crew) -> [Soldier] {
         let fetchRequest: NSFetchRequest<Soldier>
         fetchRequest = Soldier.fetchRequest()
         
@@ -94,6 +105,28 @@ class CrewViewModel: ObservableObject {
         } catch {
             let error = error as NSError
             print("Error fetching soldiers: \(error)")
+        }
+        
+        return []
+    }
+    
+    func getCaptainPowerArray(captain: Captain) -> [Power] {
+        let fetchRequest: NSFetchRequest<Power>
+        fetchRequest = Power.fetchRequest()
+        
+        do {
+            let powers = try context.fetch(fetchRequest)
+            var powerArray = [Power]()
+            for power in powers {
+                if power.captain == captain {
+                    powerArray.append(power)
+                }
+            }
+            
+            return powerArray.sorted { $0.name! < $1.name! }
+        } catch {
+            let error = error as NSError
+            print("Error fetching powers: \(error)")
         }
         
         return []
