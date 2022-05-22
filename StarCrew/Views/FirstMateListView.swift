@@ -1,5 +1,5 @@
 //
-//  CaptainListView.swift
+//  FirstMateListView.swift
 //  StarCrew
 //
 //  Created by Adam Sadler on 5/21/22.
@@ -7,58 +7,58 @@
 
 import SwiftUI
 
-struct CaptainListView: View {
+struct FirstMateListView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    var captain: Captain
+    var firstMate: FirstMate
     
     var body: some View {
         VStack (spacing: 10) {
             HStack {
-                Text("Captain: ")
+                Text("First Mate: ")
                     .bold()
-                + Text("\(captain.name ?? "Unknown")")
+                + Text("\(firstMate.name ?? "Unknown")")
                 Spacer()
                 Text("Level: ")
                     .bold()
-                + Text("\(captain.level)")
+                + Text("\(firstMate.level)")
             }
             HStack {
-                Text("\(captain.background ?? "Unknown")")
+                Text("\(firstMate.background ?? "Unknown")")
                 Spacer()
                 Text("Current Health: ")
                     .bold()
-                + Text("\(captain.currentHealth)")
+                + Text("\(firstMate.currentHealth)")
             }
             HStack {
                 VStack {
                     Text("Move")
                         .bold()
-                    Text("\(captain.move)")
+                    Text("\(firstMate.move)")
                 }
                 VStack {
                     Text("Fight")
                         .bold()
-                    Text("\(captain.fight)")
+                    Text("\(firstMate.fight)")
                 }
                 VStack {
                     Text("Shoot")
                         .bold()
-                    Text("\(captain.shoot)")
+                    Text("\(firstMate.shoot)")
                 }
                 VStack {
                     Text("Armour")
                         .bold()
-                    Text("\(captain.armour)")
+                    Text("\(firstMate.armour)")
                 }
                 VStack {
                     Text("Will")
                         .bold()
-                    Text("\(captain.will)")
+                    Text("\(firstMate.will)")
                 }
                 VStack {
                     Text("Health")
                         .bold()
-                    Text("\(captain.health)")
+                    Text("\(firstMate.health)")
                 }
             }
             .frame(maxWidth: .infinity)
@@ -67,7 +67,7 @@ struct CaptainListView: View {
                     .bold()
                 Spacer()
             }
-            ForEach(Array(captain.powers as? Set<Power> ?? []), id: \.self) { power in
+            ForEach(Array(firstMate.powers as? Set<Power> ?? []), id: \.self) { power in
                 VStack {
                     HStack {
                         Text("\(power.name ?? "Unknown")")
@@ -99,45 +99,45 @@ struct CaptainListView: View {
                     .bold()
                 Spacer()
             }
-            Text("\(captain.gear ?? "")")
+            Text("\(firstMate.gear ?? "")")
                 .frame(maxWidth: .infinity, alignment: .leading)
             HStack {
                 Text("Notes")
                     .bold()
                 Spacer()
             }
-            Text("\(captain.notes ?? "")")
+            Text("\(firstMate.notes ?? "")")
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
     }
 }
 
-struct CaptainListView_Previews: PreviewProvider {
+struct FirstMateListView_Previews: PreviewProvider {
     
     static let context = PersistenceController.preview.container.viewContext
     
     static var previews: some View {
-        let sampleCaptain = Captain(context: context)
+        let sampleFirstMate = FirstMate(context: context)
         let samplePower = Power(context: context)
-        sampleCaptain.name = "Han Solo"
-        sampleCaptain.level = 25
-        sampleCaptain.background = "Rogue"
-        sampleCaptain.move = 6
-        sampleCaptain.fight = 7
-        sampleCaptain.shoot = 8
-        sampleCaptain.armour = 12
-        sampleCaptain.will = 9
-        sampleCaptain.health = 14
-        sampleCaptain.currentHealth = 10
-        sampleCaptain.gear = "Pistol, medkit"
-        sampleCaptain.notes = "Lost an ear"
+        sampleFirstMate.name = "Bucky"
+        sampleFirstMate.level = 25
+        sampleFirstMate.background = "Rogue"
+        sampleFirstMate.move = 6
+        sampleFirstMate.fight = 7
+        sampleFirstMate.shoot = 8
+        sampleFirstMate.armour = 12
+        sampleFirstMate.will = 9
+        sampleFirstMate.health = 14
+        sampleFirstMate.currentHealth = 10
+        sampleFirstMate.gear = "Pistol, medkit"
+        sampleFirstMate.notes = "Lost an ear"
         samplePower.name = "Hip shot"
         samplePower.activation = 12
         samplePower.strain = 2
         samplePower.category = "Line of sight"
         samplePower.notes = "Quickly draw your blaster and shoot an enemy."
-        sampleCaptain.addToPowers(samplePower)
+        sampleFirstMate.addToPowers(samplePower)
         
-        return CaptainListView(captain: sampleCaptain)
+        return FirstMateListView(firstMate: sampleFirstMate)
     }
 }

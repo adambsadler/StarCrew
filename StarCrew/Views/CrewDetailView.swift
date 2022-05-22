@@ -9,31 +9,43 @@ import SwiftUI
 
 struct CrewDetailView: View {
     @Environment(\.managedObjectContext) private var viewContext
-    var crew: Crew
+    @ObservedObject var crewVM: CrewViewModel
+    @State var crew: Crew
+    @State var soldierArray: [Soldier] = []
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \Captain.name, ascending: true)],
+        animation: .default)
+    private var captains: FetchedResults<Captain>
+    
+    @FetchRequest(
+        sortDescriptors: [NSSortDescriptor(keyPath: \FirstMate.name, ascending: true)],
+        animation: .default)
+    private var firstMates: FetchedResults<FirstMate>
     
     var body: some View {
         VStack {
-            HStack {
-                VStack (alignment: .leading, spacing: 10) {
-                    Text("Ship Name: ")
-                        .bold()
-                    Text("\(crew.shipName ?? "No name")")
-                        .font(.title)
+            ScrollView (showsIndicators: false) {
+                HStack {
+                    VStack (alignment: .leading, spacing: 10) {
+                        Text("Ship Name: ")
+                            .bold()
+                        Text("\(crew.shipName ?? "No name")")
+                            .font(.title)
+                    }
+                    Spacer()
+                    VStack (alignment: .trailing, spacing: 10) {
+                        Text("Experience:")
+                            .bold()
+                        Text("\(crew.experience)")
+                            .font(.title)
+                        Text("Credits:")
+                            .bold()
+                        Text("\(crew.credits)")
+                            .font(.title)
+                    }
                 }
-                Spacer()
-                VStack (alignment: .trailing, spacing: 10) {
-                    Text("Experience:")
-                        .bold()
-                    Text("\(crew.experience)")
-                        .font(.title)
-                    Text("Credits:")
-                        .bold()
-                    Text("\(crew.credits)")
-                        .font(.title)
-                }
-            }
-            .padding(.bottom)
-            ScrollView {
+                .padding(.bottom)
                 VStack (alignment: .leading, spacing: 10) {
                     HStack {
                         Text("Ship Upgrades:")
@@ -47,27 +59,68 @@ struct CrewDetailView: View {
                         Spacer()
                     }
                     Text("\(crew.shipHold ?? "")")
+                    Divider()
                     
                     if crew.captain == nil {
-                        Button {
-                            // Go to CreateCaptainView
+                        NavigationLink {
+                            CreateCaptainView(crewVM: CrewViewModel(), crew: crew)
                         } label: {
                             Text("Add Captain")
                                 .bold()
                                 .padding()
                                 .foregroundColor(.white)
-                                .background(Color.gray)
+                                .background(Color.blue)
                                 .cornerRadius(15)
                         }
 
                     } else {
                         CaptainListView(captain: crew.captain!)
                     }
+                    Divider()
+                    
+                    if crew.firstMate == nil {
+                        NavigationLink {
+                            CreateFirstMateView(crewVM: CrewViewModel(), crew: crew)
+                        } label: {
+                            Text("Add First Mate")
+                                .bold()
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .cornerRadius(15)
+                        }
+
+                    } else {
+                        FirstMateListView(firstMate: crew.firstMate!)
+                        Divider()
+                    }
+                    
+                    ForEach(soldierArray, id: \.self) { soldier in
+                        SoldierListView(soldier: soldier)
+                        Divider()
+                    }
+                    
+                    if soldierArray.count < 8 {
+                        NavigationLink {
+                            CreateSoldierView(crewVM: crewVM, crew: crew)
+                        } label: {
+                            Text("Recruit Soldier")
+                                .bold()
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .cornerRadius(15)
+                        }
+
+                    }
                 }
             }
         }
         .padding()
         .navigationTitle("\(crew.name!)")
+        .onAppear {
+            soldierArray = crewVM.createSoldierArray(crew: crew)
+        }
     }
 }
 
@@ -78,14 +131,18 @@ struct CrewListView_Previews: PreviewProvider {
     static var previews: some View {
         
         let sampleCrew = Crew(context: context)
+        let sampleSoldier = Soldier(context: context)
         sampleCrew.name = "The Otters"
         sampleCrew.experience = 32
         sampleCrew.credits = 106
         sampleCrew.shipName = "Bertha 26"
         sampleCrew.shipUpgrades = "Advanced life support, thermal conditioners"
         sampleCrew.shipHold = "Mech suit and plasma artillery"
+        sampleSoldier.name = "Bucky"
+        sampleSoldier.type = "Tech"
+        sampleCrew.addToSoldiers(sampleSoldier)
         
-        return CrewDetailView(crew: sampleCrew)
+        return CrewDetailView(crewVM: CrewViewModel(), crew: sampleCrew)
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

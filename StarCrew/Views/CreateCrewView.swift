@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CreateCrewView: View {
     @Environment(\.presentationMode) var presentationMode
-    var crewVM: CrewViewModel
+    @ObservedObject var crewVM: CrewViewModel
     @State var crewName: String = ""
     @State var shipName: String = ""
     

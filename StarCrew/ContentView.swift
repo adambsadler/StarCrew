@@ -21,7 +21,7 @@ struct ContentView: View {
             List {
                 ForEach(crews) { crew in
                     NavigationLink {
-                        CrewDetailView(crew: crew)
+                        CrewDetailView(crewVM: CrewViewModel(), crew: crew)
                     } label: {
                         Text(crew.name!)
                     }

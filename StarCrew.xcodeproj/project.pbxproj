@@ -18,6 +18,11 @@
 		F91B374528393F8700175019 /* CaptainListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B374428393F8700175019 /* CaptainListView.swift */; };
 		F91B374728396EC400175019 /* CreateCrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B374628396EC400175019 /* CreateCrewView.swift */; };
 		F91B374A2839762E00175019 /* CrewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B37492839762E00175019 /* CrewViewModel.swift */; };
+		F91B374C2839839A00175019 /* CreateCaptainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B374B2839839A00175019 /* CreateCaptainView.swift */; };
+		F91B374E28398C5700175019 /* FirstMateListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B374D28398C5700175019 /* FirstMateListView.swift */; };
+		F91B375028398D7F00175019 /* CreateFirstMateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B374F28398D7F00175019 /* CreateFirstMateView.swift */; };
+		F91B37522839B8F400175019 /* CreateSoldierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B37512839B8F400175019 /* CreateSoldierView.swift */; };
+		F91B37542839BA9400175019 /* SoldierListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B37532839BA9400175019 /* SoldierListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,11 @@
 		F91B374428393F8700175019 /* CaptainListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptainListView.swift; sourceTree = "<group>"; };
 		F91B374628396EC400175019 /* CreateCrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCrewView.swift; sourceTree = "<group>"; };
 		F91B37492839762E00175019 /* CrewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrewViewModel.swift; sourceTree = "<group>"; };
+		F91B374B2839839A00175019 /* CreateCaptainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCaptainView.swift; sourceTree = "<group>"; };
+		F91B374D28398C5700175019 /* FirstMateListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMateListView.swift; sourceTree = "<group>"; };
+		F91B374F28398D7F00175019 /* CreateFirstMateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFirstMateView.swift; sourceTree = "<group>"; };
+		F91B37512839B8F400175019 /* CreateSoldierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSoldierView.swift; sourceTree = "<group>"; };
+		F91B37532839BA9400175019 /* SoldierListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,11 @@
 				F91B373F28392A1600175019 /* CrewDetailView.swift */,
 				F91B374428393F8700175019 /* CaptainListView.swift */,
 				F91B374628396EC400175019 /* CreateCrewView.swift */,
+				F91B374B2839839A00175019 /* CreateCaptainView.swift */,
+				F91B374D28398C5700175019 /* FirstMateListView.swift */,
+				F91B374F28398D7F00175019 /* CreateFirstMateView.swift */,
+				F91B37512839B8F400175019 /* CreateSoldierView.swift */,
+				F91B37532839BA9400175019 /* SoldierListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,8 +208,13 @@
 				F91B374A2839762E00175019 /* CrewViewModel.swift in Sources */,
 				F91B374528393F8700175019 /* CaptainListView.swift in Sources */,
 				F91B374028392A1600175019 /* CrewDetailView.swift in Sources */,
+				F91B375028398D7F00175019 /* CreateFirstMateView.swift in Sources */,
+				F91B37542839BA9400175019 /* SoldierListView.swift in Sources */,
+				F91B37522839B8F400175019 /* CreateSoldierView.swift in Sources */,
+				F91B374E28398C5700175019 /* FirstMateListView.swift in Sources */,
 				F91B374728396EC400175019 /* CreateCrewView.swift in Sources */,
 				F91B37282839195800175019 /* StarCrewApp.swift in Sources */,
+				F91B374C2839839A00175019 /* CreateCaptainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
