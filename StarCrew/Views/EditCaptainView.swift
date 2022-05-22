@@ -74,7 +74,7 @@ struct EditCaptainView: View {
                 Section(header: Text("Powers")) {
                     ForEach(powerArray, id: \.self) { power in
                         NavigationLink {
-                            // to edit power view
+                            EditCaptainPowerView(crewVM: CrewViewModel(), power: power)
                         } label: {
                             Text("\(power.name ?? "Power Name")")
                         }

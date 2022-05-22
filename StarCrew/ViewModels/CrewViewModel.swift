@@ -76,6 +76,17 @@ class CrewViewModel: ObservableObject {
         }
     }
     
+    func deletePower(power: Power) {
+        context.delete(power)
+        
+        do {
+            try context.save()
+        } catch {
+            let error = error as NSError
+            print("Error deleting power: \(error)")
+        }
+    }
+    
     func createFirstMate(crew: Crew, firstMateName: String, firstMateBackground: String) {
         let newFirstMate = FirstMate(context: context)
         newFirstMate.name = firstMateName

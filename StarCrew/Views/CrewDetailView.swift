@@ -10,7 +10,7 @@ import SwiftUI
 struct CrewDetailView: View {
     @Environment(\.managedObjectContext) private var viewContext
     @ObservedObject var crewVM: CrewViewModel
-    @State var crew: Crew
+    @ObservedObject var crew: Crew
     @State var soldierArray: [Soldier] = []
     
     @FetchRequest(

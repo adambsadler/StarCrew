@@ -26,6 +26,7 @@
 		F91B3756283A6EEC00175019 /* EditCrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3755283A6EEC00175019 /* EditCrewView.swift */; };
 		F91B3758283A862100175019 /* EditCaptainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3757283A862100175019 /* EditCaptainView.swift */; };
 		F91B375A283A98A700175019 /* AddCaptainPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3759283A98A700175019 /* AddCaptainPowerView.swift */; };
+		F91B375C283A9E9800175019 /* EditCaptainPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B375B283A9E9800175019 /* EditCaptainPowerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		F91B3755283A6EEC00175019 /* EditCrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCrewView.swift; sourceTree = "<group>"; };
 		F91B3757283A862100175019 /* EditCaptainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCaptainView.swift; sourceTree = "<group>"; };
 		F91B3759283A98A700175019 /* AddCaptainPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCaptainPowerView.swift; sourceTree = "<group>"; };
+		F91B375B283A9E9800175019 /* EditCaptainPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCaptainPowerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 				F91B3755283A6EEC00175019 /* EditCrewView.swift */,
 				F91B3757283A862100175019 /* EditCaptainView.swift */,
 				F91B3759283A98A700175019 /* AddCaptainPowerView.swift */,
+				F91B375B283A9E9800175019 /* EditCaptainPowerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -226,6 +229,7 @@
 				F91B375A283A98A700175019 /* AddCaptainPowerView.swift in Sources */,
 				F91B3758283A862100175019 /* EditCaptainView.swift in Sources */,
 				F91B374C2839839A00175019 /* CreateCaptainView.swift in Sources */,
+				F91B375C283A9E9800175019 /* EditCaptainPowerView.swift in Sources */,
 				F91B3756283A6EEC00175019 /* EditCrewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
