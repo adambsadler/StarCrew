@@ -29,7 +29,7 @@ struct CrewDetailView: View {
                 HStack {
                     VStack (alignment: .leading, spacing: 10) {
                         NavigationLink {
-                            EditCrewView(crewVM: CrewViewModel(), crew: crew)
+                            EditCrewView(crewVM: crewVM, crew: crew)
                         } label: {
                             Text("Update Crew Info")
                                 .bold()
@@ -73,15 +73,19 @@ struct CrewDetailView: View {
                     Divider()
                     
                     if crew.captain == nil {
-                        NavigationLink {
-                            CreateCaptainView(crewVM: CrewViewModel(), crew: crew)
-                        } label: {
-                            Text("Add Captain")
-                                .bold()
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.blue)
-                                .cornerRadius(15)
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                CreateCaptainView(crewVM: crewVM, crew: crew)
+                            } label: {
+                                Text("Add Captain")
+                                    .bold()
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            Spacer()
                         }
 
                     } else {
@@ -89,7 +93,7 @@ struct CrewDetailView: View {
                         HStack {
                             Spacer()
                             NavigationLink {
-                                EditCaptainView(crewVM: CrewViewModel(), captain: crew.captain!)
+                                EditCaptainView(crewVM: crewVM, captain: crew.captain!)
                             } label: {
                                 Text("Update Captain")
                                     .bold()
@@ -104,15 +108,19 @@ struct CrewDetailView: View {
                     }
                     
                     if crew.firstMate == nil {
-                        NavigationLink {
-                            CreateFirstMateView(crewVM: CrewViewModel(), crew: crew)
-                        } label: {
-                            Text("Add First Mate")
-                                .bold()
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.blue)
-                                .cornerRadius(15)
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                CreateFirstMateView(crewVM: crewVM, crew: crew)
+                            } label: {
+                                Text("Add First Mate")
+                                    .bold()
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            Spacer()
                         }
 
                     } else {
@@ -120,7 +128,7 @@ struct CrewDetailView: View {
                         HStack {
                             Spacer()
                             NavigationLink {
-                                EditFirstMateView(crewVM: CrewViewModel(), firstMate: crew.firstMate!)
+                                EditFirstMateView(crewVM: crewVM, firstMate: crew.firstMate!)
                             } label: {
                                 Text("Update First Mate")
                                     .bold()
@@ -136,21 +144,38 @@ struct CrewDetailView: View {
                     
                     ForEach(soldierArray, id: \.self) { soldier in
                         SoldierListView(soldier: soldier)
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                EditSoldierView(crewVM: crewVM, soldier: soldier)
+                            } label: {
+                                Text("Update Soldier")
+                                    .bold()
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            Spacer()
+                        }
                         Divider()
                     }
                     
                     if soldierArray.count < 8 {
-                        NavigationLink {
-                            CreateSoldierView(crewVM: crewVM, crew: crew)
-                        } label: {
-                            Text("Recruit Soldier")
-                                .bold()
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.blue)
-                                .cornerRadius(15)
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                CreateSoldierView(crewVM: crewVM, crew: crew)
+                            } label: {
+                                Text("Recruit Soldier")
+                                    .bold()
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            Spacer()
                         }
-
                     }
                 }
             }

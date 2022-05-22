@@ -146,6 +146,17 @@ class CrewViewModel: ObservableObject {
         }
     }
     
+    func deleteSoldier(soldier: Soldier) {
+        context.delete(soldier)
+        
+        do {
+            try context.save()
+        } catch {
+            let error = error as NSError
+            print("Error deleting soldier: \(error)")
+        }
+    }
+    
     func getSoldierArray(crew: Crew) -> [Soldier] {
         let fetchRequest: NSFetchRequest<Soldier>
         fetchRequest = Soldier.fetchRequest()

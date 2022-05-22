@@ -29,6 +29,7 @@
 		F91B375C283A9E9800175019 /* EditPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B375B283A9E9800175019 /* EditPowerView.swift */; };
 		F91B375E283AA82000175019 /* EditFirstMateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B375D283AA82000175019 /* EditFirstMateView.swift */; };
 		F91B3762283AAD3100175019 /* AddFirstMatePowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3761283AAD3100175019 /* AddFirstMatePowerView.swift */; };
+		F91B3764283AAF7F00175019 /* EditSoldierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3763283AAF7F00175019 /* EditSoldierView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		F91B375B283A9E9800175019 /* EditPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPowerView.swift; sourceTree = "<group>"; };
 		F91B375D283AA82000175019 /* EditFirstMateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFirstMateView.swift; sourceTree = "<group>"; };
 		F91B3761283AAD3100175019 /* AddFirstMatePowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFirstMatePowerView.swift; sourceTree = "<group>"; };
+		F91B3763283AAF7F00175019 /* EditSoldierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSoldierView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				F91B375B283A9E9800175019 /* EditPowerView.swift */,
 				F91B375D283AA82000175019 /* EditFirstMateView.swift */,
 				F91B3761283AAD3100175019 /* AddFirstMatePowerView.swift */,
+				F91B3763283AAF7F00175019 /* EditSoldierView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				F91B372A2839195800175019 /* ContentView.swift in Sources */,
 				F91B374A2839762E00175019 /* CrewViewModel.swift in Sources */,
 				F91B374528393F8700175019 /* CaptainListView.swift in Sources */,
+				F91B3764283AAF7F00175019 /* EditSoldierView.swift in Sources */,
 				F91B374028392A1600175019 /* CrewDetailView.swift in Sources */,
 				F91B375028398D7F00175019 /* CreateFirstMateView.swift in Sources */,
 				F91B37542839BA9400175019 /* SoldierListView.swift in Sources */,
