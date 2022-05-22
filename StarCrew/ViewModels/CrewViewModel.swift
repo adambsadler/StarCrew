@@ -102,6 +102,35 @@ class CrewViewModel: ObservableObject {
         }
     }
     
+    func addPowerToFirstMate(firstMate: FirstMate, name: String, category: String, notes: String, activation: Int64, strain: Int64) {
+        let newPower = Power(context: context)
+        newPower.name = name
+        newPower.category = category
+        newPower.notes = notes
+        newPower.activation = activation
+        newPower.strain = strain
+        
+        firstMate.addToPowers(newPower)
+        
+        do {
+            try context.save()
+        } catch {
+            let error = error as NSError
+            print("Error saving new power: \(error)")
+        }
+    }
+    
+    func deleteFirstMate(firstMate: FirstMate) {
+        context.delete(firstMate)
+        
+        do {
+            try context.save()
+        } catch {
+            let error = error as NSError
+            print("Error deleting first mate: \(error)")
+        }
+    }
+    
     func recruitSoldier(crew: Crew, soldierName: String, soldierType: String) {
         let newSoldier = Soldier(context: context)
         newSoldier.name = soldierName
@@ -148,6 +177,28 @@ class CrewViewModel: ObservableObject {
             var powerArray = [Power]()
             for power in powers {
                 if power.captain == captain {
+                    powerArray.append(power)
+                }
+            }
+            
+            return powerArray.sorted { $0.name! < $1.name! }
+        } catch {
+            let error = error as NSError
+            print("Error fetching powers: \(error)")
+        }
+        
+        return []
+    }
+    
+    func getFirstMatePowerArray(firstMate: FirstMate) -> [Power] {
+        let fetchRequest: NSFetchRequest<Power>
+        fetchRequest = Power.fetchRequest()
+        
+        do {
+            let powers = try context.fetch(fetchRequest)
+            var powerArray = [Power]()
+            for power in powers {
+                if power.firstMate == firstMate {
                     powerArray.append(power)
                 }
             }

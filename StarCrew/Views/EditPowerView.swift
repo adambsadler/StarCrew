@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditCaptainPowerView: View {
+struct EditPowerView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var crewVM: CrewViewModel
     @ObservedObject var power: Power
@@ -106,6 +106,6 @@ struct EditCaptainPowerView_Previews: PreviewProvider {
         samplePower.category = "Line of sight"
         samplePower.notes = "Quickly draw your blaster and shoot an enemy."
         
-        return EditCaptainPowerView(crewVM: CrewViewModel(), power: samplePower)
+        return EditPowerView(crewVM: CrewViewModel(), power: samplePower)
     }
 }

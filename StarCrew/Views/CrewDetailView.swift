@@ -100,8 +100,8 @@ struct CrewDetailView: View {
                             }
                             Spacer()
                         }
+                        Divider()
                     }
-                    Divider()
                     
                     if crew.firstMate == nil {
                         NavigationLink {
@@ -117,6 +117,20 @@ struct CrewDetailView: View {
 
                     } else {
                         FirstMateListView(firstMate: crew.firstMate!)
+                        HStack {
+                            Spacer()
+                            NavigationLink {
+                                EditFirstMateView(crewVM: CrewViewModel(), firstMate: crew.firstMate!)
+                            } label: {
+                                Text("Update First Mate")
+                                    .bold()
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(15)
+                            }
+                            Spacer()
+                        }
                         Divider()
                     }
                     

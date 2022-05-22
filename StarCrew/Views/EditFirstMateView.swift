@@ -1,5 +1,5 @@
 //
-//  EditCaptainView.swift
+//  EditFirstMateView.swift
 //  StarCrew
 //
 //  Created by Adam Sadler on 5/22/22.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-struct EditCaptainView: View {
+struct EditFirstMateView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var crewVM: CrewViewModel
-    @ObservedObject var captain: Captain
-    @State var captainName: String = ""
+    @ObservedObject var firstMate: FirstMate
+    @State var firstMateName: String = ""
     @State var background: String = ""
     @State var level: Int64 = 0
     @State var move: Int64 = 0
@@ -29,15 +29,15 @@ struct EditCaptainView: View {
     var body: some View {
         VStack {
             Form {
-                Section(header: Text("Captain Name")) {
-                    TextField("Captain Name", text: $captainName)
+                Section(header: Text("First Mate Name")) {
+                    TextField("First Mate Name", text: $firstMateName)
                         .disableAutocorrection(true)
                 }
                 Section(header: Text("Background")) {
                     TextField("Background", text: $background)
                         .disableAutocorrection(true)
                 }
-                Section(header: Text("Captain Stats")) {
+                Section(header: Text("First Mate Stats")) {
                     HStack {
                         Text("Level: ")
                         TextField("Level", value: $level, formatter: NumberFormatter())
@@ -80,7 +80,7 @@ struct EditCaptainView: View {
                         }
                     }
                     NavigationLink {
-                        AddCaptainPowerView(crewVM: CrewViewModel(), captain: captain)
+                        AddFirstMatePowerView(crewVM: CrewViewModel(), firstMate: firstMate)
                     } label: {
                         Text("Add a new power")
                             .foregroundColor(.gray)
@@ -95,23 +95,23 @@ struct EditCaptainView: View {
                 }
                 Section(footer: Button {
                     DispatchQueue.main.async {
-                        captain.name = captainName
-                        captain.background = background
-                        captain.level = level
-                        captain.move = move
-                        captain.fight = fight
-                        captain.shoot = shoot
-                        captain.armour = armour
-                        captain.will = will
-                        captain.health = health
-                        captain.currentHealth = currentHealth
-                        captain.gear = gear
-                        captain.notes = notes
+                        firstMate.name = firstMateName
+                        firstMate.background = background
+                        firstMate.level = level
+                        firstMate.move = move
+                        firstMate.fight = fight
+                        firstMate.shoot = shoot
+                        firstMate.armour = armour
+                        firstMate.will = will
+                        firstMate.health = health
+                        firstMate.currentHealth = currentHealth
+                        firstMate.gear = gear
+                        firstMate.notes = notes
                         crewVM.saveData()
                     }
                     presentationMode.wrappedValue.dismiss()
                 } label: {
-                    Text("Update Captain")
+                    Text("Update First Mate")
                         .font(.body)
                         .padding()
                         .foregroundColor(.white)
@@ -123,16 +123,16 @@ struct EditCaptainView: View {
                 }
             }
         }
-        .navigationTitle("Update Captain")
+        .navigationTitle("Update First Mate")
         .toolbar {
             ToolbarItem {
                 Button {
                     showingAlert = true
                 } label: {
-                    Text("Delete Captain")
-                }.alert("Are you sure you want to delete your captain?", isPresented: $showingAlert) {
+                    Text("Delete First Mate")
+                }.alert("Are you sure you want to delete your first mate?", isPresented: $showingAlert) {
                     Button("Delete", role: .destructive) {
-                        crewVM.deleteCaptain(captain: captain)
+                        crewVM.deleteFirstMate(firstMate: firstMate)
                         presentationMode.wrappedValue.dismiss()
                     }
                     Button("Cancel", role: .cancel) { }
@@ -141,50 +141,50 @@ struct EditCaptainView: View {
         }
         .onAppear {
             DispatchQueue.main.async {
-                captainName = captain.name ?? ""
-                background = captain.background ?? ""
-                level = captain.level
-                move = captain.move
-                fight = captain.fight
-                shoot = captain.shoot
-                armour = captain.armour
-                will = captain.will
-                health = captain.health
-                currentHealth = captain.currentHealth
-                gear = captain.gear ?? ""
-                notes = captain.notes ?? ""
-                powerArray = crewVM.getCaptainPowerArray(captain: captain)
+                firstMateName = firstMate.name ?? ""
+                background = firstMate.background ?? ""
+                level = firstMate.level
+                move = firstMate.move
+                fight = firstMate.fight
+                shoot = firstMate.shoot
+                armour = firstMate.armour
+                will = firstMate.will
+                health = firstMate.health
+                currentHealth = firstMate.currentHealth
+                gear = firstMate.gear ?? ""
+                notes = firstMate.notes ?? ""
+                powerArray = crewVM.getFirstMatePowerArray(firstMate: firstMate)
             }
         }
     }
 }
 
-struct EditCaptainView_Previews: PreviewProvider {
+struct EditFirstMateView_Previews: PreviewProvider {
     
     static let context = PersistenceController.preview.container.viewContext
     
     static var previews: some View {
-        let sampleCaptain = Captain(context: context)
+        let sampleFirstMate = FirstMate(context: context)
         let samplePower = Power(context: context)
-        sampleCaptain.name = "Han Solo"
-        sampleCaptain.level = 25
-        sampleCaptain.background = "Rogue"
-        sampleCaptain.move = 6
-        sampleCaptain.fight = 7
-        sampleCaptain.shoot = 8
-        sampleCaptain.armour = 12
-        sampleCaptain.will = 9
-        sampleCaptain.health = 14
-        sampleCaptain.currentHealth = 10
-        sampleCaptain.gear = "Pistol, medkit"
-        sampleCaptain.notes = "Lost an ear"
+        sampleFirstMate.name = "Han Solo"
+        sampleFirstMate.level = 25
+        sampleFirstMate.background = "Rogue"
+        sampleFirstMate.move = 6
+        sampleFirstMate.fight = 7
+        sampleFirstMate.shoot = 8
+        sampleFirstMate.armour = 12
+        sampleFirstMate.will = 9
+        sampleFirstMate.health = 14
+        sampleFirstMate.currentHealth = 10
+        sampleFirstMate.gear = "Pistol, medkit"
+        sampleFirstMate.notes = "Lost an ear"
         samplePower.name = "Hip shot"
         samplePower.activation = 12
         samplePower.strain = 2
         samplePower.category = "Line of sight"
         samplePower.notes = "Quickly draw your blaster and shoot an enemy."
-        sampleCaptain.addToPowers(samplePower)
+        sampleFirstMate.addToPowers(samplePower)
         
-        return EditCaptainView(crewVM: CrewViewModel(), captain: sampleCaptain)
+        return EditFirstMateView(crewVM: CrewViewModel(), firstMate: sampleFirstMate)
     }
 }

@@ -26,7 +26,9 @@
 		F91B3756283A6EEC00175019 /* EditCrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3755283A6EEC00175019 /* EditCrewView.swift */; };
 		F91B3758283A862100175019 /* EditCaptainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3757283A862100175019 /* EditCaptainView.swift */; };
 		F91B375A283A98A700175019 /* AddCaptainPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3759283A98A700175019 /* AddCaptainPowerView.swift */; };
-		F91B375C283A9E9800175019 /* EditCaptainPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B375B283A9E9800175019 /* EditCaptainPowerView.swift */; };
+		F91B375C283A9E9800175019 /* EditPowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B375B283A9E9800175019 /* EditPowerView.swift */; };
+		F91B375E283AA82000175019 /* EditFirstMateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B375D283AA82000175019 /* EditFirstMateView.swift */; };
+		F91B3762283AAD3100175019 /* AddFirstMatePowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3761283AAD3100175019 /* AddFirstMatePowerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,7 +54,9 @@
 		F91B3755283A6EEC00175019 /* EditCrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCrewView.swift; sourceTree = "<group>"; };
 		F91B3757283A862100175019 /* EditCaptainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCaptainView.swift; sourceTree = "<group>"; };
 		F91B3759283A98A700175019 /* AddCaptainPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCaptainPowerView.swift; sourceTree = "<group>"; };
-		F91B375B283A9E9800175019 /* EditCaptainPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCaptainPowerView.swift; sourceTree = "<group>"; };
+		F91B375B283A9E9800175019 /* EditPowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPowerView.swift; sourceTree = "<group>"; };
+		F91B375D283AA82000175019 /* EditFirstMateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFirstMateView.swift; sourceTree = "<group>"; };
+		F91B3761283AAD3100175019 /* AddFirstMatePowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFirstMatePowerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +135,9 @@
 				F91B3755283A6EEC00175019 /* EditCrewView.swift */,
 				F91B3757283A862100175019 /* EditCaptainView.swift */,
 				F91B3759283A98A700175019 /* AddCaptainPowerView.swift */,
-				F91B375B283A9E9800175019 /* EditCaptainPowerView.swift */,
+				F91B375B283A9E9800175019 /* EditPowerView.swift */,
+				F91B375D283AA82000175019 /* EditFirstMateView.swift */,
+				F91B3761283AAD3100175019 /* AddFirstMatePowerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,7 +220,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F91B375E283AA82000175019 /* EditFirstMateView.swift in Sources */,
 				F91B37342839195900175019 /* StarCrew.xcdatamodeld in Sources */,
+				F91B3762283AAD3100175019 /* AddFirstMatePowerView.swift in Sources */,
 				F91B37312839195800175019 /* Persistence.swift in Sources */,
 				F91B372A2839195800175019 /* ContentView.swift in Sources */,
 				F91B374A2839762E00175019 /* CrewViewModel.swift in Sources */,
@@ -229,7 +237,7 @@
 				F91B375A283A98A700175019 /* AddCaptainPowerView.swift in Sources */,
 				F91B3758283A862100175019 /* EditCaptainView.swift in Sources */,
 				F91B374C2839839A00175019 /* CreateCaptainView.swift in Sources */,
-				F91B375C283A9E9800175019 /* EditCaptainPowerView.swift in Sources */,
+				F91B375C283A9E9800175019 /* EditPowerView.swift in Sources */,
 				F91B3756283A6EEC00175019 /* EditCrewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
