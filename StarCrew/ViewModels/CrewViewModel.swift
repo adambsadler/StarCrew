@@ -11,6 +11,15 @@ import CoreData
 class CrewViewModel: ObservableObject {
     let context = PersistenceController.shared.container.viewContext
     
+    func saveData() {
+        do {
+            try context.save()
+        } catch {
+            let error = error as NSError
+            print("Error saving data: \(error)")
+        }
+    }
+    
     func createCrew(name: String, shipName: String) {
         let newCrew = Crew(context: context)
         newCrew.name = name
@@ -81,7 +90,7 @@ class CrewViewModel: ObservableObject {
                 }
             }
             
-            return soldierArray
+            return soldierArray.sorted { $0.name! < $1.name! }
         } catch {
             let error = error as NSError
             print("Error fetching soldiers: \(error)")

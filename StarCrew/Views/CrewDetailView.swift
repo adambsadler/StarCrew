@@ -28,10 +28,21 @@ struct CrewDetailView: View {
             ScrollView (showsIndicators: false) {
                 HStack {
                     VStack (alignment: .leading, spacing: 10) {
+                        NavigationLink {
+                            EditCrewView(crewVM: CrewViewModel(), crew: crew)
+                        } label: {
+                            Text("Update Crew Info")
+                                .bold()
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(Color.blue)
+                                .cornerRadius(15)
+                        }
                         Text("Ship Name: ")
                             .bold()
                         Text("\(crew.shipName ?? "No name")")
                             .font(.title)
+                        
                     }
                     Spacer()
                     VStack (alignment: .trailing, spacing: 10) {

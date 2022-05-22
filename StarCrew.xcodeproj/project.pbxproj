@@ -23,6 +23,7 @@
 		F91B375028398D7F00175019 /* CreateFirstMateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B374F28398D7F00175019 /* CreateFirstMateView.swift */; };
 		F91B37522839B8F400175019 /* CreateSoldierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B37512839B8F400175019 /* CreateSoldierView.swift */; };
 		F91B37542839BA9400175019 /* SoldierListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B37532839BA9400175019 /* SoldierListView.swift */; };
+		F91B3756283A6EEC00175019 /* EditCrewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91B3755283A6EEC00175019 /* EditCrewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		F91B374F28398D7F00175019 /* CreateFirstMateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFirstMateView.swift; sourceTree = "<group>"; };
 		F91B37512839B8F400175019 /* CreateSoldierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSoldierView.swift; sourceTree = "<group>"; };
 		F91B37532839BA9400175019 /* SoldierListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoldierListView.swift; sourceTree = "<group>"; };
+		F91B3755283A6EEC00175019 /* EditCrewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCrewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				F91B374F28398D7F00175019 /* CreateFirstMateView.swift */,
 				F91B37512839B8F400175019 /* CreateSoldierView.swift */,
 				F91B37532839BA9400175019 /* SoldierListView.swift */,
+				F91B3755283A6EEC00175019 /* EditCrewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				F91B374728396EC400175019 /* CreateCrewView.swift in Sources */,
 				F91B37282839195800175019 /* StarCrewApp.swift in Sources */,
 				F91B374C2839839A00175019 /* CreateCaptainView.swift in Sources */,
+				F91B3756283A6EEC00175019 /* EditCrewView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
