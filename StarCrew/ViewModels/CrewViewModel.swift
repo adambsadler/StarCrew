@@ -47,6 +47,24 @@ class CrewViewModel: ObservableObject {
         }
     }
     
+    func addPowerToCaptain(captain: Captain, name: String, category: String, notes: String, activation: Int64, strain: Int64) {
+        let newPower = Power(context: context)
+        newPower.name = name
+        newPower.category = category
+        newPower.notes = notes
+        newPower.activation = activation
+        newPower.strain = strain
+        
+        captain.addToPowers(newPower)
+        
+        do {
+            try context.save()
+        } catch {
+            let error = error as NSError
+            print("Error saving new power: \(error)")
+        }
+    }
+    
     func deleteCaptain(captain: Captain) {
         context.delete(captain)
         

@@ -10,7 +10,7 @@ import SwiftUI
 struct EditCaptainView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var crewVM: CrewViewModel
-    var captain: Captain
+    @ObservedObject var captain: Captain
     @State var captainName: String = ""
     @State var background: String = ""
     @State var level: Int64 = 0
@@ -80,9 +80,10 @@ struct EditCaptainView: View {
                         }
                     }
                     NavigationLink {
-                        // to create power view
+                        AddCaptainPowerView(crewVM: CrewViewModel(), captain: captain)
                     } label: {
                         Text("Add a new power")
+                            .foregroundColor(.gray)
                     }
 
                 }

@@ -90,6 +90,7 @@ struct CaptainListView: View {
                         + Text("\(power.notes ?? "Notes")")
                             
                     }.frame(maxWidth: .infinity, alignment: .leading)
+                    Divider()
                 }
             }
             .padding(.horizontal)
