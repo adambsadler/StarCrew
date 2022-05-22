@@ -41,34 +41,42 @@ struct EditCaptainView: View {
                     HStack {
                         Text("Level: ")
                         TextField("Level", value: $level, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     HStack {
                         Text("Move: ")
                         TextField("Move", value: $move, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     HStack {
                         Text("Fight: ")
                         TextField("Fight", value: $fight, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     HStack {
                         Text("Shoot: ")
                         TextField("Shoot", value: $shoot, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     HStack {
                         Text("Armour: ")
                         TextField("Armour", value: $armour, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     HStack {
                         Text("Will: ")
                         TextField("Will", value: $will, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     HStack {
                         Text("Health: ")
                         TextField("Health", value: $health, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     HStack {
                         Text("Current Health: ")
                         TextField("Current Health", value: $currentHealth, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                 }
                 Section(header: Text("Powers")) {

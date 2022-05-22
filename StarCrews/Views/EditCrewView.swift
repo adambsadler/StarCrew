@@ -33,10 +33,12 @@ struct EditCrewView: View {
                     HStack {
                         Text("Experience: ")
                         TextField("Experience", value: $experience, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     HStack {
                         Text("Credits: ")
                         TextField("Credits", value: $credits, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                 }
                 Section(header: Text("Ship Upgrades")) {

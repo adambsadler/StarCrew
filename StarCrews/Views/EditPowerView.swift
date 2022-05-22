@@ -33,10 +33,12 @@ struct EditPowerView: View {
                     HStack {
                         Text("Activation: ")
                         TextField("Activation", value: $activation, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                     HStack {
                         Text("Strain: ")
                         TextField("Strain", value: $strain, formatter: NumberFormatter())
+                            .keyboardType(.numberPad)
                     }
                 }
                 Section(header: Text("Description")) {
