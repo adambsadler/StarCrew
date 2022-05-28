@@ -133,23 +133,13 @@
 		F91B374128393B2E00175019 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F952918B28425542000986D4 /* Soldier Views */,
+				F952918A2842551A000986D4 /* First Mate Views */,
+				F952918928425501000986D4 /* Captain Views */,
 				F91B373F28392A1600175019 /* CrewDetailView.swift */,
-				F91B374428393F8700175019 /* CaptainListView.swift */,
 				F91B374628396EC400175019 /* CreateCrewView.swift */,
-				F91B374B2839839A00175019 /* CreateCaptainView.swift */,
-				F91B374D28398C5700175019 /* FirstMateListView.swift */,
-				F91B374F28398D7F00175019 /* CreateFirstMateView.swift */,
-				F91B37512839B8F400175019 /* CreateSoldierView.swift */,
-				F91B37532839BA9400175019 /* SoldierListView.swift */,
 				F91B3755283A6EEC00175019 /* EditCrewView.swift */,
-				F91B3757283A862100175019 /* EditCaptainView.swift */,
-				F91B3759283A98A700175019 /* AddCaptainPowerView.swift */,
 				F91B375B283A9E9800175019 /* EditPowerView.swift */,
-				F91B375D283AA82000175019 /* EditFirstMateView.swift */,
-				F91B3761283AAD3100175019 /* AddFirstMatePowerView.swift */,
-				F91B3763283AAF7F00175019 /* EditSoldierView.swift */,
-				F952918528419A38000986D4 /* ChooseCaptainPowerView.swift */,
-				F952918728419E52000986D4 /* ChooseFirstMatePowerView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +158,40 @@
 				F9529183284186DA000986D4 /* SamplePower.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F952918928425501000986D4 /* Captain Views */ = {
+			isa = PBXGroup;
+			children = (
+				F952918528419A38000986D4 /* ChooseCaptainPowerView.swift */,
+				F91B374B2839839A00175019 /* CreateCaptainView.swift */,
+				F91B3757283A862100175019 /* EditCaptainView.swift */,
+				F91B3759283A98A700175019 /* AddCaptainPowerView.swift */,
+				F91B374428393F8700175019 /* CaptainListView.swift */,
+			);
+			path = "Captain Views";
+			sourceTree = "<group>";
+		};
+		F952918A2842551A000986D4 /* First Mate Views */ = {
+			isa = PBXGroup;
+			children = (
+				F91B3761283AAD3100175019 /* AddFirstMatePowerView.swift */,
+				F91B374D28398C5700175019 /* FirstMateListView.swift */,
+				F952918728419E52000986D4 /* ChooseFirstMatePowerView.swift */,
+				F91B375D283AA82000175019 /* EditFirstMateView.swift */,
+				F91B374F28398D7F00175019 /* CreateFirstMateView.swift */,
+			);
+			path = "First Mate Views";
+			sourceTree = "<group>";
+		};
+		F952918B28425542000986D4 /* Soldier Views */ = {
+			isa = PBXGroup;
+			children = (
+				F91B37512839B8F400175019 /* CreateSoldierView.swift */,
+				F91B3763283AAF7F00175019 /* EditSoldierView.swift */,
+				F91B37532839BA9400175019 /* SoldierListView.swift */,
+			);
+			path = "Soldier Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

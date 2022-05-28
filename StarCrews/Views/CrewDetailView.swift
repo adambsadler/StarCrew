@@ -89,7 +89,6 @@ struct CrewDetailView: View {
                         }
 
                     } else {
-                        CaptainListView(captain: crew.captain!)
                         HStack {
                             Spacer()
                             Button {
@@ -132,6 +131,9 @@ struct CrewDetailView: View {
                             .frame(width: 45, height: 45)
                             Spacer()
                         }
+                        
+                        CaptainListView(captain: crew.captain!)
+                        
                         Divider()
                     }
                     
@@ -152,7 +154,6 @@ struct CrewDetailView: View {
                         }
 
                     } else {
-                        FirstMateListView(firstMate: crew.firstMate!)
                         HStack {
                             Spacer()
                             Button {
@@ -195,11 +196,13 @@ struct CrewDetailView: View {
                             .frame(width: 45, height: 45)
                             Spacer()
                         }
+                        
+                        FirstMateListView(firstMate: crew.firstMate!)
+                        
                         Divider()
                     }
                     
                     ForEach(soldierArray, id: \.self) { soldier in
-                        SoldierListView(soldier: soldier)
                         HStack {
                             Spacer()
                             Button {
@@ -242,6 +245,9 @@ struct CrewDetailView: View {
                             .frame(width: 45, height: 45)
                             Spacer()
                         }
+                        
+                        SoldierListView(soldier: soldier)
+                        
                         Divider()
                     }
                     
