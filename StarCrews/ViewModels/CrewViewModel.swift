@@ -47,6 +47,36 @@ class CrewViewModel: ObservableObject {
         }
     }
     
+    func increaseCaptainHealth(captain: Captain) {
+        if captain.currentHealth < captain.health {
+            DispatchQueue.main.async {
+                captain.currentHealth += 1
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                let error = error as NSError
+                print("Error increasing captain's health: \(error)")
+            }
+        }
+    }
+    
+    func decreaseCaptainHealth(captain: Captain) {
+        if captain.currentHealth > 0 {
+            DispatchQueue.main.async {
+                captain.currentHealth -= 1
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                let error = error as NSError
+                print("Error descreasing captain's health: \(error)")
+            }
+        }
+    }
+    
     func addPowerToCaptain(captain: Captain, name: String, category: String, notes: String, activation: Int64, strain: Int64) {
         let newPower = Power(context: context)
         newPower.name = name
@@ -120,6 +150,36 @@ class CrewViewModel: ObservableObject {
         }
     }
     
+    func increaseFirstMateHealth(firstMate: FirstMate) {
+        if firstMate.currentHealth < firstMate.health {
+            DispatchQueue.main.async {
+                firstMate.currentHealth += 1
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                let error = error as NSError
+                print("Error increasing first mate's health: \(error)")
+            }
+        }
+    }
+    
+    func decreaseFirstMateHealth(firstMate: FirstMate) {
+        if firstMate.currentHealth > 0 {
+            DispatchQueue.main.async {
+                firstMate.currentHealth -= 1
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                let error = error as NSError
+                print("Error descreasing first mate's health: \(error)")
+            }
+        }
+    }
+    
     func deleteFirstMate(firstMate: FirstMate) {
         context.delete(firstMate)
         
@@ -143,6 +203,36 @@ class CrewViewModel: ObservableObject {
         } catch {
             let error = error as NSError
             print("Error recruiting soldier: \(error)")
+        }
+    }
+    
+    func increaseSoldierHealth(soldier: Soldier) {
+        if soldier.currentHealth < soldier.health {
+            DispatchQueue.main.async {
+                soldier.currentHealth += 1
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                let error = error as NSError
+                print("Error increasing soldier's health: \(error)")
+            }
+        }
+    }
+    
+    func decreaseSoldierHealth(soldier: Soldier) {
+        if soldier.currentHealth > 0 {
+            DispatchQueue.main.async {
+                soldier.currentHealth -= 1
+            }
+            
+            do {
+                try context.save()
+            } catch {
+                let error = error as NSError
+                print("Error descreasing soldier's health: \(error)")
+            }
         }
     }
     

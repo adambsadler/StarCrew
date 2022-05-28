@@ -88,7 +88,7 @@ struct EditCaptainView: View {
                         }
                     }
                     NavigationLink {
-                        AddCaptainPowerView(crewVM: CrewViewModel(), captain: captain)
+                        ChooseCaptainPowerView(crewVM: crewVM, captain: captain)
                     } label: {
                         Text("Add a new power")
                             .foregroundColor(.gray)

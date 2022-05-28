@@ -92,6 +92,20 @@ struct CrewDetailView: View {
                         CaptainListView(captain: crew.captain!)
                         HStack {
                             Spacer()
+                            Button {
+                                crewVM.decreaseCaptainHealth(captain: crew.captain!)
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .foregroundColor(.red)
+                                    Image(systemName: "arrow.down.heart")
+                                        .resizable()
+                                        .foregroundColor(.white)
+                                        .frame(width: 25, height: 25)
+                                }
+                                .frame(width: 45, height: 45)
+                            }
+                            Spacer()
                             NavigationLink {
                                 EditCaptainView(crewVM: crewVM, captain: crew.captain!)
                             } label: {
@@ -102,6 +116,20 @@ struct CrewDetailView: View {
                                     .background(Color.blue)
                                     .cornerRadius(15)
                             }
+                            Spacer()
+                            Button {
+                                crewVM.increaseCaptainHealth(captain: crew.captain!)
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .foregroundColor(.green)
+                                    Image(systemName: "arrow.up.heart")
+                                        .resizable()
+                                        .foregroundColor(.white)
+                                        .frame(width: 25, height: 25)
+                                }
+                            }
+                            .frame(width: 45, height: 45)
                             Spacer()
                         }
                         Divider()
@@ -127,6 +155,20 @@ struct CrewDetailView: View {
                         FirstMateListView(firstMate: crew.firstMate!)
                         HStack {
                             Spacer()
+                            Button {
+                                crewVM.decreaseFirstMateHealth(firstMate: crew.firstMate!)
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .foregroundColor(.red)
+                                    Image(systemName: "arrow.down.heart")
+                                        .resizable()
+                                        .foregroundColor(.white)
+                                        .frame(width: 25, height: 25)
+                                }
+                                .frame(width: 45, height: 45)
+                            }
+                            Spacer()
                             NavigationLink {
                                 EditFirstMateView(crewVM: crewVM, firstMate: crew.firstMate!)
                             } label: {
@@ -138,6 +180,20 @@ struct CrewDetailView: View {
                                     .cornerRadius(15)
                             }
                             Spacer()
+                            Button {
+                                crewVM.increaseFirstMateHealth(firstMate: crew.firstMate!)
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .foregroundColor(.green)
+                                    Image(systemName: "arrow.up.heart")
+                                        .resizable()
+                                        .foregroundColor(.white)
+                                        .frame(width: 25, height: 25)
+                                }
+                            }
+                            .frame(width: 45, height: 45)
+                            Spacer()
                         }
                         Divider()
                     }
@@ -145,6 +201,20 @@ struct CrewDetailView: View {
                     ForEach(soldierArray, id: \.self) { soldier in
                         SoldierListView(soldier: soldier)
                         HStack {
+                            Spacer()
+                            Button {
+                                crewVM.decreaseSoldierHealth(soldier: soldier)
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .foregroundColor(.red)
+                                    Image(systemName: "arrow.down.heart")
+                                        .resizable()
+                                        .foregroundColor(.white)
+                                        .frame(width: 25, height: 25)
+                                }
+                                .frame(width: 45, height: 45)
+                            }
                             Spacer()
                             NavigationLink {
                                 EditSoldierView(crewVM: crewVM, soldier: soldier)
@@ -156,6 +226,20 @@ struct CrewDetailView: View {
                                     .background(Color.blue)
                                     .cornerRadius(15)
                             }
+                            Spacer()
+                            Button {
+                                crewVM.increaseSoldierHealth(soldier: soldier)
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .foregroundColor(.green)
+                                    Image(systemName: "arrow.up.heart")
+                                        .resizable()
+                                        .foregroundColor(.white)
+                                        .frame(width: 25, height: 25)
+                                }
+                            }
+                            .frame(width: 45, height: 45)
                             Spacer()
                         }
                         Divider()
@@ -209,6 +293,6 @@ struct CrewListView_Previews: PreviewProvider {
         sampleCrew.addToSoldiers(sampleSoldier)
         
         return CrewDetailView(crewVM: CrewViewModel(), crew: sampleCrew)
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            //.environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

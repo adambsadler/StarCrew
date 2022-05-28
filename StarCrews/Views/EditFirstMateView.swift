@@ -88,7 +88,7 @@ struct EditFirstMateView: View {
                         }
                     }
                     NavigationLink {
-                        AddFirstMatePowerView(crewVM: CrewViewModel(), firstMate: firstMate)
+                        ChooseFirstMatePowerView(crewVM: CrewViewModel(), firstMate: firstMate)
                     } label: {
                         Text("Add a new power")
                             .foregroundColor(.gray)

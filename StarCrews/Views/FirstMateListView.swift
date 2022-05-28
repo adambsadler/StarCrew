@@ -67,7 +67,10 @@ struct FirstMateListView: View {
                     .bold()
                 Spacer()
             }
-            ForEach(Array(firstMate.powers as? Set<Power> ?? []), id: \.self) { power in
+            let powerArray = Array(firstMate.powers as? Set<Power> ?? []).sorted {
+                $0.name! < $1.name!
+            }
+            ForEach(Array(powerArray), id: \.self) { power in
                 VStack {
                     HStack {
                         Text("\(power.name ?? "Unknown")")
