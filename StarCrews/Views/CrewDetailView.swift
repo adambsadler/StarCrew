@@ -270,7 +270,7 @@ struct CrewDetailView: View {
                 }
             }
         }
-        .padding()
+        .padding(.horizontal)
         .navigationTitle("\(crew.name!)")
         .onAppear {
             DispatchQueue.main.async {

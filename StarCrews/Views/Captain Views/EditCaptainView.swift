@@ -26,6 +26,22 @@ struct EditCaptainView: View {
     @State var powerArray: [Power] = []
     @State private var showingAlert = false
     
+    private func saveCaptainData() {
+        captain.name = captainName
+        captain.background = background
+        captain.level = level
+        captain.move = move
+        captain.fight = fight
+        captain.shoot = shoot
+        captain.armour = armour
+        captain.will = will
+        captain.health = health
+        captain.currentHealth = currentHealth
+        captain.gear = gear
+        captain.notes = notes
+        crewVM.saveData()
+    }
+    
     var body: some View {
         VStack {
             Form {
@@ -93,7 +109,6 @@ struct EditCaptainView: View {
                         Text("Add a new power")
                             .foregroundColor(.gray)
                     }
-
                 }
                 Section(header: Text("Gear")) {
                     TextEditor(text: $gear)
@@ -103,19 +118,7 @@ struct EditCaptainView: View {
                 }
                 Section(footer: Button {
                     DispatchQueue.main.async {
-                        captain.name = captainName
-                        captain.background = background
-                        captain.level = level
-                        captain.move = move
-                        captain.fight = fight
-                        captain.shoot = shoot
-                        captain.armour = armour
-                        captain.will = will
-                        captain.health = health
-                        captain.currentHealth = currentHealth
-                        captain.gear = gear
-                        captain.notes = notes
-                        crewVM.saveData()
+                        saveCaptainData()
                     }
                     presentationMode.wrappedValue.dismiss()
                 } label: {
@@ -162,6 +165,11 @@ struct EditCaptainView: View {
                 gear = captain.gear ?? ""
                 notes = captain.notes ?? ""
                 powerArray = crewVM.getCaptainPowerArray(captain: captain)
+            }
+        }
+        .onDisappear() {
+            DispatchQueue.main.async {
+                saveCaptainData()
             }
         }
     }

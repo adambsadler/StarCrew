@@ -26,6 +26,22 @@ struct EditFirstMateView: View {
     @State var powerArray: [Power] = []
     @State private var showingAlert = false
     
+    private func saveFirstMateData() {
+        firstMate.name = firstMateName
+        firstMate.background = background
+        firstMate.level = level
+        firstMate.move = move
+        firstMate.fight = fight
+        firstMate.shoot = shoot
+        firstMate.armour = armour
+        firstMate.will = will
+        firstMate.health = health
+        firstMate.currentHealth = currentHealth
+        firstMate.gear = gear
+        firstMate.notes = notes
+        crewVM.saveData()
+    }
+    
     var body: some View {
         VStack {
             Form {
@@ -93,7 +109,6 @@ struct EditFirstMateView: View {
                         Text("Add a new power")
                             .foregroundColor(.gray)
                     }
-
                 }
                 Section(header: Text("Gear")) {
                     TextEditor(text: $gear)
@@ -103,19 +118,7 @@ struct EditFirstMateView: View {
                 }
                 Section(footer: Button {
                     DispatchQueue.main.async {
-                        firstMate.name = firstMateName
-                        firstMate.background = background
-                        firstMate.level = level
-                        firstMate.move = move
-                        firstMate.fight = fight
-                        firstMate.shoot = shoot
-                        firstMate.armour = armour
-                        firstMate.will = will
-                        firstMate.health = health
-                        firstMate.currentHealth = currentHealth
-                        firstMate.gear = gear
-                        firstMate.notes = notes
-                        crewVM.saveData()
+                        saveFirstMateData()
                     }
                     presentationMode.wrappedValue.dismiss()
                 } label: {
@@ -162,6 +165,11 @@ struct EditFirstMateView: View {
                 gear = firstMate.gear ?? ""
                 notes = firstMate.notes ?? ""
                 powerArray = crewVM.getFirstMatePowerArray(firstMate: firstMate)
+            }
+        }
+        .onDisappear() {
+            DispatchQueue.main.async {
+                saveFirstMateData()
             }
         }
     }
